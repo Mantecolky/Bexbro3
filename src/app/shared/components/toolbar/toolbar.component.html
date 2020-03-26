@@ -1,7 +1,16 @@
 <mat-toolbar color="primary">
-    <a routerLink="/" routerLinkActive="active">BexBro</a>
+    <a routerLink="/" routerLinkActive="active">{{ appName }}</a>
     <span class="fill-remaining-space"></span>
-    <a routerLink="login/" routerLinkActive="active">Login</a>
-    <a routerLink="/admin" routerLinkActive="active">Admin</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
+    
+    <a routerLink="login/" routerLinkActive="active">
+        <button mat-button>login</button>
+    </a>
+
+    <a routerLink="/admin" routerLinkActive="active">
+    <button mat-button>admin</button>
+    </a>
+
+    <a routerLink="/about" routerLinkActive="active">
+    <button mat-button>about</button>
+    </a>
 </mat-toolbar>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bexbro-dbf97": {
+      "hosting": {
+        "Bexbro3": [
+          "bexbro-dbf97"
+        ]
+      }
+    }
+  }
+}
