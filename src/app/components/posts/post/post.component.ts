@@ -1,28 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
+import { PostI } from 'src/app/shared/models/post.interface';
+import { Observable } from 'rxjs';
+import { PostService } from '../post.service';
+
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  public post:{
-    id:string;
-    titlePost:string;
-    contentPost:string;
-    imagePost:string;
-  }={
-    id:'1',
-    titlePost:'Post One',
-    contentPost: 'Hola Mundo',
-    imagePost:'https://picsum.photos/536/354'
-  };
+  
+  public post$ : Observable<PostI>;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private postSvc: PostService) { }
 
   ngOnInit(){
-    this.post.id = this.route.snapshot.params.id;
-
+    const idPost = this.route.snapshot.params.id;
+    this.post$ = this.postSvc.getOnePost(idPost);
   }
-
 }

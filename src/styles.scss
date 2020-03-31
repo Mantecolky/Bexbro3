@@ -10,3 +10,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border: 1px solid #f5f5f5;
 
 }
+.container-spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.cultura{
+    background:orange !important;
+}
+.retrato{
+    background: cadetblue !important;
+}
+.autorretrato{
+    background: coral !important;
+}
+.impasibilidad{
+    background: blueviolet !important;  
+}
+.intimidad{
+    background: darksalmon !important;
+}
+
+.style{
+    background: red;
+}
+mat-chip.mat-chip.mat-focus-indicator.mat-primary.mat-standard-chip{
+    min-height: 1rem;
+    padding: 9px;
+}
