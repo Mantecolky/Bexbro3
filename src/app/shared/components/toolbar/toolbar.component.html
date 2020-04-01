@@ -2,15 +2,22 @@
     <a routerLink="/" routerLinkActive="active">{{ appName }}</a>
     <span class="fill-remaining-space"></span>
     
-    <a routerLink="login/" routerLinkActive="active">
-        <button mat-button>login</button>
+    <a routerLink="/admin" 
+        routerLinkActive="active"
+        *ngIf="authSvc.userData | async"
+    >
+        <button mat-button>admin</button>
     </a>
-
-    <a routerLink="/admin" routerLinkActive="active">
-    <button mat-button>admin</button>
-    </a>
-
+        
     <a routerLink="/about" routerLinkActive="active">
-    <button mat-button>about</button>
+        <button mat-button>about</button>
     </a>
-</mat-toolbar>
+    <a *ngIf="authSvc.userData | async; else showLogin" (click)="onLogout()">
+        <button mat-button>logout</button>
+    </a>
+
+    <ng-template #showLogin>
+        <a routerLink="/login" routerLinkActive="active">
+            <button mat-button>login</button>
+        </a>
+    </ng-template>

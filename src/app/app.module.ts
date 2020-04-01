@@ -15,6 +15,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import {AngularFireAuthModule } from '@angular/fire/auth';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     AppRoutingModule,
     NewPostModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: StorageBucket, useValue:'gs://bexbro-dbf97.appspot.com'}
