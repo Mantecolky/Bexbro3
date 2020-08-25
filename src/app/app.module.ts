@@ -18,6 +18,9 @@ import { environment } from 'src/environments/environment';
 import {AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
+import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
+import { EditPostModule } from './components/posts/edit-post/edit-post.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
     NewPostComponent,
     PostComponent,
     ToolbarComponent,
-    ContainerAppComponent
+    ContainerAppComponent,
+    ModalComponent,
+    EditPostComponent
 
   ],
   imports: [
@@ -38,8 +43,10 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
     AppRoutingModule,
     NewPostModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EditPostModule
   ],
+  entryComponents:[ModalComponent],
   providers: [
     { provide: StorageBucket, useValue:'gs://bexbro-dbf97.appspot.com'}
   ],
