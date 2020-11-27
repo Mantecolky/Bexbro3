@@ -10,11 +10,12 @@ import { FileI } from '../models/file.interface';
   providedIn: 'root'
 })
 export class AuthService {
-  public userData$:Observable<firebase.User>;
+  public userData$: Observable<firebase.User>;
   private filePath: string;
 
 
-  constructor(private afAuth: AngularFireAuth, private storage: AngularFireStorage) { 
+  constructor(private afAuth: AngularFireAuth, private storage: 
+    AngularFireStorage) { 
     this.userData$ = afAuth.authState;
   }
   loginByEmail(user:UserI){

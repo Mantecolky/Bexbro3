@@ -47,7 +47,7 @@ private initValuesForm(user: UserI): void{
   });
 }
 
-handleImage(image, FileI):void {
+handleImage(image: FileI):void {
   this.image = image;
 }
 

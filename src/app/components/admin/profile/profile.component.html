@@ -6,7 +6,7 @@
                 <img [src]="currentImage" (click)="inputImageProfile.click()"/>
 
                 <input hidden type="file" #inputImageProfile formControlName="photoURL" 
-                (change)="handleImage(($event ?. target ?. files)[0])" />
+                (change)="handleImage(($event?.target?.files)[0])" />
             </div>
 
         </mat-card-header>

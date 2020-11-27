@@ -9,7 +9,9 @@ export class ModalComponent implements OnInit {
 
   constructor(public dialog: MatDialogRef<ModalComponent>,
     // tslint:disable-next-line: align
-    @Inject(MAT_DIALOG_DATA) public data: string
+    @Inject(MAT_DIALOG_DATA) public data: any
+    //@Inject(MAT_DIALOG_DATA) public data: string
+    // @Inject(MAT_DIALOG_DATA) public data: {content: string, message:string}
   ) { }
 
   ngOnInit() {
