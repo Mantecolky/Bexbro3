@@ -5,33 +5,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewPostComponent } from './components/posts/new-post/new-post.component';
 import { NewPostModule } from './components/posts/new-post/new-post.module';
-import { PostComponent } from './components/posts/post/post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
-/* firebase */
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage';
-import {AngularFireModule} from '@angular/fire';
-import { environment } from 'src/environments/environment';
-import {AngularFireAuthModule } from '@angular/fire/auth';
+/* Firebase */
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 import { EditPostModule } from './components/posts/edit-post/edit-post.module';
+import { DetailsPostComponent } from './components/posts/details-post/details-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPostComponent,
-    PostComponent,
     ToolbarComponent,
     ContainerAppComponent,
     ModalComponent,
-    EditPostComponent
-
+    EditPostComponent,
+    DetailsPostComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +46,8 @@ import { EditPostModule } from './components/posts/edit-post/edit-post.module';
     ReactiveFormsModule,
     EditPostModule
   ],
-  entryComponents:[ModalComponent],
   providers: [
-    { provide: StorageBucket, useValue:'gs://bexbro-dbf97.appspot.com'}
+    { provide: StorageBucket, useValue: 'gs://ngblog-eab58.appspot.com' }
   ],
   bootstrap: [AppComponent]
 })
