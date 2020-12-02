@@ -6,18 +6,18 @@
         routerLinkActive="active"
         *ngIf="authSvc.userData$ | async"
     >
-        <button mat-button>admin</button>
+        <button mat-button>ADMIN</button>
     </a>
         
     <a routerLink="/about" routerLinkActive="active">
-        <button mat-button>about</button>
+        <button mat-button>ABOUT</button>
     </a>
     <a *ngIf="authSvc.userData$ | async; else showLogin" (click)="onLogout()">
-        <button mat-button>logout</button>
+        <button mat-button>LOGOUT</button>
     </a>
 
     <ng-template #showLogin>
         <a routerLink="/login" routerLinkActive="active">
-            <button mat-button>login</button>
+            <button mat-button>LOGIN</button>
         </a>
     </ng-template>
