@@ -23,6 +23,7 @@ import { EditPostComponent } from './components/posts/edit-post/edit-post.compon
 import { EditPostModule } from './components/posts/edit-post/edit-post.module';
 import { DetailsPostComponent } from './components/posts/details-post/details-post.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

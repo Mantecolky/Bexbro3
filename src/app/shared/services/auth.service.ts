@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { FileI } from '../models/file.interface';
+// import { resolve } from 'dns';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,28 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth, private storage: 
     AngularFireStorage) { 
     this.userData$ = afAuth.authState;
-  }
-  loginByEmail(user:UserI){
-    const { email, password } = user;
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    }
 
+    registerUser(user:UserI) {
+      const { email, password } = user;
+      return new Promise ((resolve, reject) => {
+        this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+        .then( userData => resolve(userData),
+        err => reject(err));
+      });
+    }
+
+    loginByEmail(user:UserI) {
+    const { email, password } = user;
+    return new Promise ((resolve, reject) =>{
+      this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then(userData => resolve(userData),
+        err => reject(err));
+    });
   }
+    //loginByEmail(user:UserI){
+    //const { email, password } = user;
+    //return this.afAuth.auth.signInWithEmailAndPassword(email, password)
   logout(){
     this.afAuth.auth.signOut();
   }
