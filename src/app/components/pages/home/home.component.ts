@@ -1,7 +1,8 @@
 import { PostService } from './../../posts/post.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs'
-import { PostI } from '../../../shared/models/post.interface'
+import { Observable } from 'rxjs';
+import { PostI } from '../../../shared/models/post.interface';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,10 @@ import { PostI } from '../../../shared/models/post.interface'
 export class HomeComponent implements OnInit {
   public posts$: Observable<PostI[]>;
 
-  constructor(private postSvc: PostService) { }
+  constructor(private authSvc: AuthService, private postSvc: PostService) { }
 
   ngOnInit() {
     this.posts$ = this.postSvc.getAllPosts();
+    console.log (this.authSvc.getuser());
   }
 }

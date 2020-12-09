@@ -28,6 +28,10 @@ export class AuthService {
         err => reject(err));
       });
     }
+    getuser(){
+      var user=this.afAuth.auth.currentUser;
+      return user;
+    }
 
     loginByEmail(user:UserI) {
     const { email, password } = user;

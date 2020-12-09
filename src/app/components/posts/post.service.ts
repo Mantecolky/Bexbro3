@@ -5,6 +5,7 @@ import { map, finalize } from 'rxjs/operators';
 import { PostI } from '../../shared/models/post.interface';
 import { FileI } from '../../shared/models/file.interface';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class PostService {
   private downloadURL: Observable<string>;
 
   constructor(
+    private authSvc: AuthService,
     private afs: AngularFirestore,
     private storage: AngularFireStorage
   ) {
@@ -22,7 +24,8 @@ export class PostService {
   }
 
   public getAllPosts(): Observable<PostI[]> {
-    return this.postsCollection
+    var uid = this.authSvc.getuser().uid;
+    return this.afs.collection('posts', ref => ref.where('uid', '==', uid))
       .snapshotChanges()
       .pipe(
         map(actions =>
@@ -56,7 +59,9 @@ export class PostService {
   }
 
   private savePost(post: PostI) {
+    var uid = this.authSvc.getuser().uid;
     const postObj = {
+      uid: uid,
       titlePost: post.titlePost,
       contentPost: post.contentPost,
       imagePost: this.downloadURL,
