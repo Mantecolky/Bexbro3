@@ -4,8 +4,7 @@
     
     <a routerLink="/admin" 
         routerLinkActive="active"
-        *ngIf="authSvc.userData$ | async"
-    >
+        *ngIf="authSvc.userData$ | async">
         <button mat-button>ADMIN</button>
     </a>
         
