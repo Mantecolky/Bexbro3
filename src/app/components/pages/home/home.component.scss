@@ -1,4 +1,5 @@
 .container{
+    
     margin-top:25px;
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
@@ -12,4 +13,22 @@
         padding: 20px;
         font-size: 150%;
     }
+}
+
+.login{
+
+
+    display: flex;
+    justify-content: center ;
+    flex-direction: column ;
+    align-items: center;
+}
+.logoimg{
+    width:365px ;
+    height:122px ;
+        .logo{
+            width: 100%;
+            height: 100%;
+            }   
+           
 }

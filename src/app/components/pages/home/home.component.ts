@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.posts$ = this.postSvc.getAllPosts();
-    console.log (this.authSvc.getuser());
+    let autenticacion = this.authSvc.getuser();
+      console.log (this.authSvc.getuser());
   }
 }

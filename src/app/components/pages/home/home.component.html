@@ -3,10 +3,19 @@
       <app-post [post]="post"></app-post>
     </mat-card>
   </div>
-  
-<ng-template #loading>
-    <div class="container-spinner">
-        <mat-spinner></mat-spinner>
+
+
+<ng-template #loading> 
+    <div class="logueate">
+      <div class="login">
+        <div class="logoimg">
+          <img class="logo" src="https://i.imgur.com/XEQvlML.png">
+        </div>
+        <div texto>
+          <h1>Bienvenido a BexBro, logueate para comenzar a guardar tus ideas XD</h1>
+        </div>
+        <button routerLink="/login" mat-raised-button color="primary">ENTRAR</button>
+      </div>
+   
     </div>
 </ng-template>
-<!-- comentar todo y hacer el nuevo home -->
