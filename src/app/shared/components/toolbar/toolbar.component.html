@@ -13,11 +13,11 @@
         <button mat-button>ABOUT</button>
     </a>
     <a *ngIf="authSvc.userData$ | async; else showLogin" (click)="onLogout()">
-        <button mat-button>LOGOUT</button>
+        <button mat-button>DESCONECTAR</button>
     </a>
 
     <ng-template #showLogin>
         <a routerLink="/login" routerLinkActive="active">
-            <button mat-button>LOGIN</button>
+            <button mat-button>INGRESAR</button>
         </a>
     </ng-template>
