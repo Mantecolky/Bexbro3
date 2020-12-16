@@ -41,9 +41,7 @@ export class AuthService {
         err => reject(err));
     });
   }
-    //loginByEmail(user:UserI){
-    //const { email, password } = user;
-    //return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+
   logout(){
     this.afAuth.auth.signOut();
   }
