@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
-    <a routerLink="/" routerLinkActive="active">{{ appName }}</a>
+    <a routerLink="/"> {{ appName }}</a>
+    <!-- <a routerLink="/" routerLinkActive="active">{{ appName }}</a> -->
     <span class="fill-remaining-space"></span>
     
     <a routerLink="/admin" 
@@ -11,7 +12,7 @@
     <a routerLink="/about" routerLinkActive="active">
         <button mat-button>ABOUT</button>
     </a>
-    <a *ngIf="authSvc.userData$ | async; else showLogin" (click)="onLogout()">
+    <a routerLink="/home"  *ngIf="authSvc.userData$ | async; else showLogin" (click)="onLogout()">
         <button mat-button>DESCONECTAR</button>
     </a>
 

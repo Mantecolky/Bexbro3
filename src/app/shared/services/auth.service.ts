@@ -44,6 +44,7 @@ export class AuthService {
 
   logout(){
     this.afAuth.auth.signOut();
+    
   }
   preSaveUserProfile(user: UserI, image?: FileI): void{
     if(image){
